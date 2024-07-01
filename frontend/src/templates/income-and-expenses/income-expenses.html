@@ -7,21 +7,21 @@
     </div>
 
     <div class="operations-diagram-periods diagram-periods d-flex gap-3 align-items-center">
-        <button type="button" class="diagram-btn btn btn-outline-secondary active ">Сегодня</button>
-        <button type="button" class="diagram-btn btn btn-outline-secondary ">Неделя</button>
-        <button type="button" class="diagram-btn btn btn-outline-secondary ">Месяц</button>
-        <button type="button" class="diagram-btn btn btn-outline-secondary ">Год</button>
-        <button type="button" class="diagram-btn btn btn-outline-secondary ">Все</button>
-        <p type="button" class="diagram-btn btn btn-outline-secondary m-0 ">Интервал</p>
+        <button type="button" class="diagram-btn btn btn-outline-secondary active" data-period="today">Сегодня</button>
+        <button type="button" class="diagram-btn btn btn-outline-secondary" data-period="week">Неделя</button>
+        <button type="button" class="diagram-btn btn btn-outline-secondary" data-period="month">Месяц</button>
+        <button type="button" class="diagram-btn btn btn-outline-secondary" data-period="year">Год</button>
+        <button type="button" class="diagram-btn btn btn-outline-secondary" data-period="all">Все</button>
+        <p type="button" class="diagram-btn btn btn-outline-secondary m-0" data-period="interval">Интервал</p>
         <span>с</span>
-        <a href="javascript:void(0)" id="startDate" data-toggle="datepicker">Дата</a>
+        <input type="text" size="3" id="start-date" name="start" placeholder="Дата" class="date text-decoration-underline border-0">
         <span>по</span>
-        <a href="javascript:void(0)" id="endDate" data-toggle="datepicker">Дата</a>
+        <input type="text" size="3" id="end-date" name="start" placeholder="Дата" class="date text-decoration-underline border-0">
     </div>
 
-    <div class="table-responsive overflow-auto">
+    <div class="table-responsive overflow-auto" >
         <hr>
-        <table class="table table-hover ">
+        <table class="table table-hover" id="data=table">
             <thead>
             <tr>
                 <th scope="col">№ операции</th>
@@ -33,43 +33,22 @@
                 <th scope="col"></th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td class="text-success">доход</td>
-                <td>зарплата</td>
-                <td>500$</td>
-                <td>11.09.2022</td>
-                <td></td>
-                <td>
-                    <a href="javascript:void(0)" class="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="bi bi-trash"></i></a>
-                    <a href="/income-and-expenses-edit" class="btn" type="button"><i class="bi bi-pencil"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td class="text-danger">расход</td>
-                <td>жильё</td>
-                <td>2 500$</td>
-                <td>12.09.2022</td>
-                <td></td>
-                <td>
-                    <a href="javascript:void(0)" class="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="bi bi-trash"></i></a>
-                    <a href="/income-and-expenses-edit" class="btn" type="button"><i class="bi bi-pencil"></i></a>
-                </td>
-            </tr>
+            <tbody id="records">
             </tbody>
         </table>
 
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle"
+             style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" id="modal">
                 <div class="modal-content">
                     <div class="modal-body">
                         <p>Вы действительно хотите удалить операцию?</p>
                     </div>
                     <div class="modal-footer">
-                        <a href="javascript:void(0)" type="button" class="modal-btn btn btn-success" data-bs-dismiss="modal">Да, удалить</a>
-                        <a href="javascript:void(0)" type="button" class="modal-btn btn btn-danger" data-bs-dismiss="modal">Не удалять</a>
+                        <a href="javascript:void(0)" id="delete-btn" type="button" class="modal-btn btn btn-success"
+                           data-bs-dismiss="modal">Да, удалить</a>
+                        <a href="javascript:void(0)" type="button" class="modal-btn btn btn-danger"
+                           data-bs-dismiss="modal">Не удалять</a>
                     </div>
                 </div>
             </div>

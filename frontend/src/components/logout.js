@@ -6,13 +6,13 @@ export class Logout {
         this.openNewRoute = openNewRoute;
 
         if (!AuthUtils.getAuthInfo(AuthUtils.accessTokenKey) || !AuthUtils.getAuthInfo(AuthUtils.refreshTokenKey)) {
-            return this.openNewRoute('/sign-up');
+            return this.openNewRoute('/login');
         }
         this.logout().then();
     }
 
     async logout() {
-         await HttpUtils.request('/logout', 'POST', {
+         await HttpUtils.request('/logout', 'POST', false, {
             refreshToken: AuthUtils.getAuthInfo(AuthUtils.refreshTokenKey)
         });
         //независимо от успешности запроса разлогиниваем пользователя

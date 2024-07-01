@@ -9,23 +9,22 @@
         <button type="button" class="diagram-btn btn btn-outline-secondary ">Все</button>
         <p type="button" class="diagram-btn btn btn-outline-secondary m-0 ">Интервал</p>
         <span>с</span>
-        <a href="javascript:void(0)" id="startDate" data-toggle="datepicker">Дата</a>
+        <!--<a href="javascript:void(0)" id="startDate" data-toggle="datepicker">Дата</a>-->
+        <input type="text" size="3" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" id="start" name="start"
+        placeholder="Дата" class="date text-decoration-underline border-0" style="width: auto; display: inline-block;">
         <span>по</span>
-        <a href="javascript:void(0)" id="endDate" data-toggle="datepicker">Дата</a>
+        <input type="text" size="3" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" id="start" name="start"
+               placeholder="Дата" class="date text-decoration-underline border-0" style="width: auto; display: inline-block;">
     </div>
 
     <div class="diagram-wrap row text-center d-flex">
         <div class="diagram-container">
             <div class="diagram">
                 <h3 class="diagram-title">Доходы</h3>
-                <!--<img src="/images/pieLegend.png" alt="Diagram parts">
-                <img src="/images/pie1.png" alt="Income diagram">-->
                 <canvas class="chart" id="chart-income"></canvas>
             </div>
             <div class="diagram">
                 <h3 class="diagram-title">Расходы</h3>
-                <!--<img src="/images/pieLegend.png" alt="Diagram parts">
-                <img src="/images/pie2.png" alt="Expenses diagram">-->
                 <canvas class="chart" id="chart-expenses"></canvas>
             </div>
         </div>

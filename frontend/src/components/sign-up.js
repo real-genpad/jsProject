@@ -101,7 +101,7 @@ export class SignUp {
         this.commonErrorElement.style.display = 'none';
         if (this.validateForm()) {
             try{
-                const result = await HttpUtils.request('/signup', 'POST', {
+                const result = await HttpUtils.request('/signup', 'POST', false, {
                     name: this.fields.find(item => item.name === 'name').element.value.split(' ')[0],
                     lastName: this.fields.find(item => item.name === 'name').element.value.split(' ')[1],
                     email: this.fields.find(item => item.name === 'email').element.value,

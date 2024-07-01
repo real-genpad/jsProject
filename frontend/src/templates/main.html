@@ -2,19 +2,16 @@
     <h1 class="main-header diagram-header h3">Главная</h1>
 
     <div class="main-diagram-periods diagram-periods d-flex align-items-center">
-        <button type="button" class="diagram-btn btn btn-outline-secondary active ">Сегодня</button>
-        <button type="button" class="diagram-btn btn btn-outline-secondary ">Неделя</button>
-        <button type="button" class="diagram-btn btn btn-outline-secondary ">Месяц</button>
-        <button type="button" class="diagram-btn btn btn-outline-secondary ">Год</button>
-        <button type="button" class="diagram-btn btn btn-outline-secondary ">Все</button>
-        <p type="button" class="diagram-btn btn btn-outline-secondary m-0 ">Интервал</p>
+        <button type="button" class="diagram-btn btn btn-outline-secondary" data-period="today">Сегодня</button>
+        <button type="button" class="diagram-btn btn btn-outline-secondary" data-period="week">Неделя</button>
+        <button type="button" class="diagram-btn btn btn-outline-secondary" data-period="month">Месяц</button>
+        <button type="button" class="diagram-btn btn btn-outline-secondary" data-period="year">Год</button>
+        <button type="button" class="diagram-btn btn btn-outline-secondary active" data-period="all">Все</button>
+        <p type="button" class="diagram-btn btn btn-outline-secondary m-0" data-period="interval">Интервал</p>
         <span>с</span>
-        <!--<a href="javascript:void(0)" id="startDate" data-toggle="datepicker">Дата</a>-->
-        <input type="text" size="3" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" id="start" name="start"
-        placeholder="Дата" class="date text-decoration-underline border-0" style="width: auto; display: inline-block;">
+        <input type="text" size="3" id="start-date" name="start" placeholder="Дата" class="date text-decoration-underline border-0">
         <span>по</span>
-        <input type="text" size="3" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" id="start" name="start"
-               placeholder="Дата" class="date text-decoration-underline border-0" style="width: auto; display: inline-block;">
+        <input type="text" size="3" id="end-date" name="start" placeholder="Дата" class="date text-decoration-underline border-0">
     </div>
 
     <div class="diagram-wrap row text-center d-flex">
